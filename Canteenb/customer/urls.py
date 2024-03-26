@@ -9,6 +9,7 @@ urlpatterns = [
     path('notice', notice.query),
     path('promo', promo.verify),
 
+    path('account/getToken', account.get_csrf_token),
     path('account/signin', account.signin),
     path('account/register', account.register),
     path('account/active', account.active),

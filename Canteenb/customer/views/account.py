@@ -9,10 +9,15 @@ from django.contrib.auth import logout
 from django.core.cache import cache
 from django.core.mail import send_mail
 from django.http import JsonResponse
+from django.middleware.csrf import get_token
 
 from customer.models import Customer
 import Canteen.settings as can_set
 from lib.handler import request_handler
+
+
+def get_csrf_token(request):
+    return JsonResponse({'csrf_token': get_token(request)})
 
 
 #  登录
@@ -60,7 +65,7 @@ def register(request):
                                          email=email, is_superuser=0,
                                          first_name=fname, is_active=0,
                                          cus_sex=sex, cus_birth=birth,
-                                         cus_tel=tel,usertype='customer')
+                                         cus_tel=tel, usertype='customer')
 
             code = ''.join([str(random.randint(0, 9)) for _ in range(6)])
             cache.set(username, code, 1800)
