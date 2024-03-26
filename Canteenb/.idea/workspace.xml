@@ -4,7 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e2821ca-958d-4979-a16a-bb65a10d434e" name="更改" comment="" />
+    <list default="true" id="5e2821ca-958d-4979-a16a-bb65a10d434e" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/active-mRZSvYXh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/addOrder-CfQ3B5Et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardActive-BZ3bupK1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardApply-CvmbVVxs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardDel-C0UABRIU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardUpdate-BzGl0gmq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/customer-CVy_7e6-.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/dish-Dltg5fao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/dish-kbwFU2ow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emailStore-CTxKOj7e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emp-C5F5VOep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emp-DxRn8Otd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-BpAU4Mv_.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-Cni_yBT1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-DMXZHAZ4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-Z_0ZeioV.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/joinShop-Bbx5l9Mp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-BoGRso3a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-DByt89Lu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-DoQsqlD8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-BkCw1cMX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-C9oRD_sx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-DQNOwMhg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-BbG7AzLz.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-BllcfRqW.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-DKx3vuKq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-CIxtkA0k.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-LVr8Ss5c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-v_KRBnlO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/pageError-Bp8uwwkQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/paycard-Zx4y4i-Y.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/payment-CjtZxeBj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/promo-BbKAuL6C.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/register-B8ETDBwf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetDone-C-sfsMFS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-B1NSTHEO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-C3qS_Yhu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/shop-ab0NxonU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/superAdmin-C4Fd3v-T.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/userStore-C7y7cZWo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Canteenf/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +63,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/super/views/payment.py" root0="FORCE_HIGHLIGHTING" />
@@ -57,7 +99,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django 服务器.canteenb">
     <configuration name="Canteen" type="Python.DjangoServer" factoryName="Django server">
       <module name="Canteen" />
       <option name="ENV_FILES" value="" />
@@ -75,6 +117,30 @@
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="canteenb" type="Python.DjangoServer" factoryName="Django server">
+      <module name="canteenb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -184,6 +250,7 @@
       <workItem from="1711122814865" duration="2029000" />
       <workItem from="1711438401242" duration="1157000" />
       <workItem from="1711440937563" duration="758000" />
+      <workItem from="1711462096389" duration="492000" />
     </task>
     <servers />
   </component>
