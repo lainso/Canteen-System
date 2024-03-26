@@ -42,4 +42,4 @@ services:
       - canteen-b
 
 volumes:
-  mysql-data:
+  mysql-data-canteen:
