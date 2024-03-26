@@ -10,5 +10,5 @@
 
 涉及配置文件：
     1.canteenb/Canteen/config.py
-    ----修改以下文件需要重新执行 npm run build----
-    3.canteenf-unpack/src/config/main.js
+    2.canteenf-unpack/src/config/main.js
+    ⭐：修改此项需要重新打包，并将新文件覆盖到canteenf目录中
