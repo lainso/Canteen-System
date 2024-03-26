@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 20/03/2024 16:19:31
+ Date: 26/03/2024 20:21:43
 */
 
 SET NAMES utf8mb4;
@@ -154,7 +154,7 @@ CREATE TABLE `comment_notifications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `comment_notifications_cus_id_id_61fc182c_fk_customer_customer_id`(`cus_id_id` ASC) USING BTREE,
   CONSTRAINT `comment_notifications_cus_id_id_61fc182c_fk_customer_customer_id` FOREIGN KEY (`cus_id_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of comment_notifications
@@ -232,9 +232,9 @@ CREATE TABLE `customer_customer`  (
 -- ----------------------------
 -- Records of customer_customer
 -- ----------------------------
-INSERT INTO `customer_customer` VALUES (21, 'pbkdf2_sha256$390000$HfDTh0JwPNOAwN6boj8xPJ$JiB5OcnPTGcpLStaciaW5n4zJyBMnrBS25j1WSaj5Pw=', '2024-03-20 07:54:40.649915', 0, '123', '小凌', '', 'customer@foxmail.com', 0, 1, '2024-02-23 12:25:12.405661', '18088888888', '男', '2024-03-24T16:00:00.000Z', '广东省广州市海珠区', 'customer');
-INSERT INTO `customer_customer` VALUES (25, 'pbkdf2_sha256$390000$4ewRdN1l8Q0CtMzRHnyAt9$W28X0+QHEJX6yP+A/rU88A8pz/kyKWSPd+Dd/2aiSIc=', '2024-03-20 06:42:49.012296', 0, '456', '凌先生3', '', 'shop@foxmail.com', 0, 1, '2024-02-29 14:58:26.372319', '18099999999', '男', '2024-02-26T16:00:00.000Z', '广东省深圳市', 'shop');
-INSERT INTO `customer_customer` VALUES (26, 'pbkdf2_sha256$390000$Fy79B8Q9f68lhz4ZFAxFH8$513CASE+RFqh0/Myaex7USOOalEvSdUSKw8yIMVujR4=', '2024-03-20 06:41:56.891968', 0, '789', '刘慧', '', 'admin@foxmail.com', 0, 1, '2024-03-04 12:51:21.171361', '17399999999', '女', '2001-08-19T16:00:00.000Z', '河南省驻马店市', 'super');
+INSERT INTO `customer_customer` VALUES (21, 'pbkdf2_sha256$390000$HfDTh0JwPNOAwN6boj8xPJ$JiB5OcnPTGcpLStaciaW5n4zJyBMnrBS25j1WSaj5Pw=', '2024-03-26 08:29:59.477257', 0, '123', '耶耶', '', 'customer@system.com', 0, 1, '2024-02-23 12:25:12.405661', '13000000000', '女', '2024-03-24T16:00:00.000Z', '广东省广州市', 'customer');
+INSERT INTO `customer_customer` VALUES (25, 'pbkdf2_sha256$390000$4ewRdN1l8Q0CtMzRHnyAt9$W28X0+QHEJX6yP+A/rU88A8pz/kyKWSPd+Dd/2aiSIc=', '2024-03-20 06:42:49.012296', 0, '456', '小凌', '', 'shop@system.com', 0, 1, '2024-02-29 14:58:26.372319', '18000000000', '男', '2024-02-26T16:00:00.000Z', '广东省深圳市', 'shop');
+INSERT INTO `customer_customer` VALUES (26, 'pbkdf2_sha256$390000$Fy79B8Q9f68lhz4ZFAxFH8$513CASE+RFqh0/Myaex7USOOalEvSdUSKw8yIMVujR4=', '2024-03-26 08:34:19.945735', 0, '789', '小刘', '', 'admin@system.com', 0, 1, '2024-03-04 12:51:21.171361', '17300000000', '女', '2001-08-19T16:00:00.000Z', '河南省驻马店市', 'super');
 INSERT INTO `customer_customer` VALUES (32, 'pbkdf2_sha256$390000$Hthk5DkJqv6m0Hgqv6uUDN$mwAqqJm1VG7JfurC5zNEDsyxHp0+xYtLeDbQcmRHvNo=', '2024-03-20 06:42:33.881303', 1, 'SuperAdminForSystem', '', '', 'SuperAdmin@system.com', 1, 1, '2024-03-20 05:34:16.178958', '', NULL, NULL, NULL, 'super');
 
 -- ----------------------------
@@ -293,7 +293,7 @@ CREATE TABLE `customer_paycard`  (
 -- ----------------------------
 -- Records of customer_paycard
 -- ----------------------------
-INSERT INTO `customer_paycard` VALUES (14, '1709382600y85tov', '已激活', 21, 101.50);
+INSERT INTO `customer_paycard` VALUES (14, '1709382600y85tov', '已激活', 21, 10.00);
 
 -- ----------------------------
 -- Table structure for django_admin_log
@@ -426,9 +426,11 @@ CREATE TABLE `django_session`  (
 INSERT INTO `django_session` VALUES ('2tbsx29aunngof87mxh5qb77entm8b2u', '.eJxVjMsOgjAUBf-la9NQ0La4dO83kPsUfFBDy8IY_11IWOj2zJx5mw7m0ndzlqkb2BxN7czud0Sgm4wr4SuMl2QpjWUa0K6K3Wi258RyP23uX6CH3C9vZOEatYrBHWJFEoKgV0_aOAGqAro2UOOCKkrLUaMnFvEe9h5QnC7RNVdeT1lqNOeSHjKZzxeKGkGm:1rg33w:_Bd1GRJLyY5omPNIZIQABlwZ0rznIxwF6Cs0ctEeMvM', '2024-03-15 13:36:32.035247');
 INSERT INTO `django_session` VALUES ('5ifktlkgoig7fi6j7ureyo8q0t5fi005', 'eyIyNThiZjNjNjU3Mzk0NmYyODU4NTY2NzdjNjgwZWM3YSI6ImxhaW5zbyJ9:1rUjxN:xyIr_YcjZBzmueYN33zpAGrKqcR7r91lnAdD7Efuc1Q', '2024-02-13 08:59:01.714224');
 INSERT INTO `django_session` VALUES ('6ddm6koi12od2ovidfzx41vkmof847wh', 'eyI1ZWI2N2VkNjRmMmM0MmRjODQ3ZTg4NDMwOTRmM2Q0MiI6IjMyMTIzMSJ9:1rPMuH:l5q7FFSQKNsma7o-QZBnZJh1wVhSW_fe2-AmrtzT88w', '2024-01-29 13:21:37.854447');
+INSERT INTO `django_session` VALUES ('6to67lvh4jamvrh16tchuaz2za5y4rb8', '.eJxVjEEOwiAQRe_C2hBKKQwu3XuGZhgGWzVtU9qFMd5dSLrQ7X_vv7focd-Gfs-89mMUZ6GtOP2OAenBUyXxjtNtljRP2zoGWRV50Cyvc-Tn5XD_AgPmobzRIXQBnI6cFETvHVJQSaF1weimdQRMBlNjG0RS3gBp61tqXUcAyZRozW2vhUst7wuv4vMFibU-4g:1rncg2:JcDJ6PWaPoWy2xS_PnZ82Y749s4Uj0aThYtacxY_XU0', '2024-04-05 11:03:10.674929');
 INSERT INTO `django_session` VALUES ('9u36yezw2pd77tp2bq7lcvq290xxlx6z', 'eyJhYzY0NzhmODExODg0YmE1OGFlZGNmZmRlYWVmOWUxOSI6ImxhaW5zbyJ9:1rUjuC:PdR13wWi6a3Sa6fzJJwCk-jBu-I0-Y8sW-WbexVNgH4', '2024-02-13 08:55:44.015873');
 INSERT INTO `django_session` VALUES ('a2nevt2s2oqcacyxfvif6edd59awpadi', '.eJxVjMsOgjAUBf-la9NQ0La4dO83kPsUfFBDy8IY_11IWOj2zJx5mw7m0ndzlqkb2BxN7czud0Sgm4wr4SuMl2QpjWUa0K6K3Wi258RyP23uX6CH3C9vZOEatYrBHWJFEoKgV0_aOAGqAro2UOOCKkrLUaMnFvEe9h5QnC7RNVdeT1lqNOeSHjKZzxeKGkGm:1rmqmW:SDbWablca_TK7MRTpmTmG59C7V2MJiYVdjG1FgqN0SU', '2024-04-03 07:54:40.652916');
 INSERT INTO `django_session` VALUES ('mmcujo04jbfgek5a8m1qo5zmlyo03cuk', '.eJxNzDtuAzEMBcC7qE5BSvz6NhRXDwgQJEXKIHe3O28_mL_h2adE_KKEnEW5ABGbu0LbusdjfNXn9-_P-BgFBHgyZ6iAYmfxWftabAjbcrfsyqcj3CNFmXdqlpAf9XJaerdER2nXykYKaSQsT2C27emT4m6Pm17QAKwFjIJcPRfp6xRKe9v_J0lOPMQ:1rUkCj:3lKq1zrgQBIsQwCoFoxxt1GUTLbSDwpao5sSFoJp_xw', '2024-02-13 09:14:53.158429');
+INSERT INTO `django_session` VALUES ('py63z2uc4kilh8u2ro39daiuy7xlxqrz', '.eJxVjEEOwiAQRe_C2hBKKQwu3XuGZhgGWzVtU9qFMd5dSLrQ7X_vv7focd-Gfs-89mMUZ6GtOP2OAenBUyXxjtNtljRP2zoGWRV50Cyvc-Tn5XD_AgPmobzRIXQBnI6cFETvHVJQSaF1weimdQRMBlNjG0RS3gBp61tqXUcAyZRozW2vhUst7wuv4vMFibU-4g:1rp2GB:WHW82SoA3dAu39XpgmBQv6WAVXbwk4MHN_bBW-GHxMw', '2024-04-09 08:34:19.949733');
 
 -- ----------------------------
 -- Table structure for mailer_dontsendentry
@@ -439,7 +441,7 @@ CREATE TABLE `mailer_dontsendentry`  (
   `to_address` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `when_added` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of mailer_dontsendentry
@@ -456,7 +458,7 @@ CREATE TABLE `mailer_message`  (
   `priority` smallint UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   CONSTRAINT `mailer_message_priority_4f7b1370_check` CHECK (`priority` >= 0)
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of mailer_message
@@ -479,7 +481,7 @@ CREATE TABLE `mailer_messagelog`  (
   INDEX `mailer_messagelog_when_added_627461e6`(`when_added` ASC) USING BTREE,
   INDEX `mailer_messagelog_priority_5e712cf3`(`priority` ASC) USING BTREE,
   CONSTRAINT `mailer_messagelog_priority_5e712cf3_check` CHECK (`priority` >= 0)
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of mailer_messagelog
@@ -527,8 +529,8 @@ CREATE TABLE `shop_employee`  (
 -- ----------------------------
 -- Records of shop_employee
 -- ----------------------------
-INSERT INTO `shop_employee` VALUES (1, '小王', 'w', '1111', '休假中', '店员', 1);
-INSERT INTO `shop_employee` VALUES (2, '小李', '222', '2222', '值班中', '店长', 1);
+INSERT INTO `shop_employee` VALUES (1, '小王', 'zk-002', '18022222222', '休假中', '店员', 1);
+INSERT INTO `shop_employee` VALUES (2, '小李', 'zk-001', '18011111111', '值班中', '店长', 1);
 
 -- ----------------------------
 -- Table structure for shop_order
@@ -600,6 +602,6 @@ CREATE TABLE `shop_shop`  (
 -- ----------------------------
 -- Records of shop_shop
 -- ----------------------------
-INSERT INTO `shop_shop` VALUES (1, '仲恺饭店', '1710162404wvLDtlpqU', '18000000001', '小李', 'zk666', 25);
+INSERT INTO `shop_shop` VALUES (1, '仲恺饭店', '1710162404wvLDtlpqU', '18011111111', '小李', 'zk666', 25);
 
 SET FOREIGN_KEY_CHECKS = 1;
