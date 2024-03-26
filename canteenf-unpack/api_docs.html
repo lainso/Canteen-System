@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>内部餐饮系统 - API文档 v1.7</title>
+    <style>
+        body {
+            background-color: rgb(32, 50, 65);
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(76, 90, 102);
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar .nav-item:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* 二级目录样式 */
+        .sidebar {
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 60px;
+            background-color: rgb(76, 90, 102);
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .sidebar a:hover {
+            color: #ddd;
+        }
+
+        .sidebar .sub-menu {
+            display: none;
+            margin-left: 10px;
+        }
+
+        .sidebar .menu-item>a {
+            font-size: large;
+        }
+
+        .sidebar .sub-menu a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar .menu-item {
+            margin-bottom: 10px;
+        }
+
+        .sidebar .menu-item.active .sub-menu {
+            display: block;
+        }
+
+        /* 内容区域样式 */
+        .content {
+            margin-top: 80px;
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .content h1,
+        .content h2,
+        .content h3,
+        .content p {
+            color: rgb(185, 199, 212);
+            padding-left: 60px;
+        }
+
+        #index {
+            width: 220px;
+        }
+
+        p a {
+            text-decoration: none;
+            color: blanchedalmond;
+        }
+
+        code {
+            background: rgb(36, 57, 74);
+            color: rgb(185, 199, 212);
+            display: block;
+            white-space: pre;
+            font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+            padding-left: 20px;
+            margin-left: 40px;
+            width: 50%;
+        }
+
+        .ad-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 280px;
+            height: 110px;
+            background-color: rgb(76, 90, 102);
+            border: 1px solid #ccc;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* text-align: center; */
+            color: rgb(185, 199, 212);
+        }
+
+        .ad-container:hover {
+            transform: scale(1.05);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background-color: #999;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .close-button:hover {
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        function toggleSubMenu(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var menuItem = event.target.parentElement;
+            menuItem.classList.toggle('active');
+        }
+
+        function closeAd() {
+            var adContainer = document.querySelector('.ad-container');
+            adContainer.style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="navbar">
+        <a id="index" href="#">内部餐饮系统 - API文档</a>
+        <a class="nav-item" href="#section1">管理员端</a>
+        <a class="nav-item" href="#section2">商户端</a>
+        <a class="nav-item" href="#section3">客户端</a>
+    </div>
+
+    <div class="sidebar">
+        <div class="menu-item">
+            <a href="#section1">管理员端</a>
+            <div class="sub-menu">
+                <a href="#section1.1"> - 账号相关</a>
+                <a href="#section1.2"> - 账户管理</a>
+                <a href="#section1.3"> - 菜品管理</a>
+                <a href="#section1.4"> - 门店员工管理</a>
+                <a href="#section1.5"> - 系统通知管理</a>
+                <a href="#section1.6"> - 订单管理</a>
+                <a href="#section1.7"> - 支付卡管理</a>
+                <a href="#section1.8"> - 支付记录管理</a>
+                <a href="#section1.9"> - 促销管理</a>
+                <a href="#section1.10"> - 商户管理</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="#section2">商户端</a>
+            <div class="sub-menu">
+                <a href="#section2.1"> - 账号相关</a>
+                <a href="#section2.2"> - 菜品管理</a>
+                <a href="#section2.3"> - 门店员工管理</a>
+                <a href="#section2.4"> - 订单管理</a>
+                <a href="#section2.5"> - 支付记录管理</a>
+                <a href="#section2.6"> - 门店信息管理</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="#section3">客户端</a>
+            <div class="sub-menu">
+                <a href="#section3.1"> - 账号相关</a>
+                <a href="#section3.2"> - 顾客信息管理</a>
+                <a href="#section3.3"> - 通知管理</a>
+                <a href="#section3.4"> - 订单管理</a>
+                <a href="#section3.5"> - 支付卡管理</a>
+                <a href="#section3.6"> - 促销管理</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="close-button" onclick="closeAd()">X</div>
+        <p>接口标识说明：<br>
+        ( )：接口可选项，可不填<br>
+        [ ]：接口允许数据，多选一</p>
+    </div>
+
+
+    <div class="content">
+        <div>
+            <h1>内部餐饮系统 - API文档 v1 - /api</h1>
+            <p>此接口文档适用于 内部餐饮系统 ，文档更新日期：2023-12-17 ，版本 v1.6 。</p>
+            <p>本项目由 lains 独立开发，完成后将开源到 <a href="https://github.com/lainso">Github</a> ，欢迎 Fork 交流 。</p>
+            <p>本项目除登录模块外均需要使用 Json 格式提交数据。在涉及到的接口中，未作标明的项均为必填项，可选项将使用小括号进行标注 。</p>
+            <p>/api 为一级路由，请求接口时需对 url 进行拼接，如：api/super/account 。</p>
+            <p>所有返回数据遵循一定格式，示例如下：</p>
+            <code>
+{
+    code:0,【状态码，0为成功，1为失败】
+    info:'查询成功',【状态码说明，若发生错误，错误原因会在此处报告】
+    list:[
+        {'id':1, 'name':'lains'},
+        {...}
+    ]【业务数据】
+}
+            </code>
+        </div>
+
+        <div>
+            <h2 id="section1">管理员端 - /super</h2>
+
+            <h3 id="section1.1">01 - 账号相关 - /account</h3>
+            <code>
+登录账号 -  [POST]
+            action:signin
+            username:【账号】
+            password:【密码】
+            </code><br>
+            <code>
+登出账号 -  [GET]
+            action:signout
+            </code><br>
+            <code>
+重置密码 -  [PUT]
+            action:reset
+            username:【账号】
+            old_pass:【旧密码】
+            new_pass:【新密码】
+            </code>
+
+            <h3 id="section1.2">02 - 账户管理 - /customer</h3>
+            <code>
+增加账户 -  [POST]
+            action:add
+            username:【账号】
+            password:【密码】
+            email:【电子邮件】
+            fname:【昵称】
+            is_active:[0, 1]【1为激活】
+            usertype:['super', 'customer', 'shop']
+            (sex):【性别】
+            (birth):【生日】
+            (address):【地址】
+            </code><br>
+            <code>
+查询账户 -  [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改账户 -  [PUT]
+            action:update
+            cus_id:【客户id】【账户id】
+            cus_data:{
+                (password):【密码】
+                (email):【电子邮件】
+                (fname):【昵称】
+                (sex):【性别】
+                (birth):【生日】
+                (address):【地址】
+                (is_active):【激活状态】
+                (usertype):【账户类型】
+            }
+            </code><br>
+            <code>
+删除账户 -  [DELETE]
+            action:delete
+            cus_id:【客户id】【账户id】
+            </code><br>
+
+            <h3 id="section1.3">03 - 菜品管理 - /dish</h3>
+            <code>
+添加菜品 -  [POST]
+            action:add
+            dish_name:【菜品名】
+            dish_price:【菜品售价】
+            dish_shop:【菜品所属商户id】
+            (dish_des):【菜品描述】
+            (dish_img):【菜品图片url】
+            </code><br>
+            <code>
+查询菜品 -  [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改菜品 -  [PUT]
+            action:update
+            dish_id:【菜品id】
+            dish_data:{
+                (dish_name):【菜品名】
+                (dish_des):【菜品描述】
+                (dish_price):【菜品售价】
+                (dish_img):【菜品图片url】
+            }
+            </code><br>
+            <code>
+删除菜品 -  [DELETE]
+            action:delete
+            dish_id:【菜品id】
+            </code>
+
+            <h3 id="section1.4">04 - 门店员工管理 - /employee</h3>
+            <code>
+添加员工 -  [POST]
+            action:add
+            shop_id:【员工所属商户id】
+            emp_name:【员工姓名】
+            emp_number:【员工编号】
+            (emp_tel):【员工电话】
+            (emp_condition):['正常', '休假中', '已离职']【员工状态】
+            (emp_role):['店员', '组长',  '店长']【员工角色】
+            </code><br>
+            <code>
+查询员工 -  [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改员工 -  [PUT]
+            action:update
+            emp_id:【员工id】
+            emp_data:{
+                (emp_name):【员工姓名】
+                (emp_tel):【员工电话】
+                (emp_number):【员工编号】
+                (emp_condition):【员工状态】
+                (emp_role):【员工角色】
+            }
+            </code><br>
+            <code>
+删除员工 -  [DELETE]
+            action:delete
+            emp_id:【员工id】
+            </code>
+
+            <h3 id="section1.5">05 - 系统通知管理 - /notice</h3>
+            <code>
+添加通知 -  [POST]
+            action:add
+            noti_title:【通知标题】
+            noti_content:【通知内容】
+            cus_id:【客户id】【接收通知的用户id】
+            </code><br>
+            <code>
+查询通知 -  [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改通知 -  [PUT]
+            action:update
+            noti_id:【通知id】
+            (noti_title):【通知标题】
+            (noti_content):【通知内容】
+            </code><br>
+            <code>
+删除通知 -  [DELETE]
+            action:delete
+            noti_id:【通知id】
+            </code>
+
+            <h3 id="section1.6">06 - 订单管理 - /order</h3>
+            <code>
+添加订单 -  [POST]
+            action:add
+            cus_id:【客户id】
+            shop_id:【商户id】
+            ord_condition:['待付款', '已付款', '已完成', '已取消']
+            ord_money:【订单金额】
+            ord_list:[{
+                dish_id:【菜品id】
+                num:【菜品数量】
+            },{...}]
+            </code><br>
+            <code>
+查询订单 -  [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改订单 -  [PUT]
+            action:update
+            ord_number:【订单号】
+            ord_condition:【订单状态】
+            </code><br>
+            <code>
+删除订单 -  [DELETE]
+            action:delete
+            ord_num:【订单号】
+            </code>
+
+            <h3 id="section1.7">07 - 支付卡管理 - /paycard</h3>
+            <code>
+添加支付卡 - [POST]
+            action:add
+            cus_id:【客户id】
+            card_condition:[未激活, 已激活]【支付卡状态】
+            card_balance:【支付卡余额】
+            </code><br>
+            <code>
+查询支付卡 - [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改支付卡 - [PUT]
+            action:update
+            card_id:【支付卡id】
+            (card_balance):
+            (card_condition):[已激活, 已冻结, 已注销]
+            </code><br>
+            <code>
+删除支付卡 - [DELETE]
+            action:delete
+            card_id:【支付卡id】
+            </code>
+
+            <h3 id="section1.8">08 - 支付记录管理 - /payment</h3>
+            <code>
+添加支付记录-[POST]
+            action:add
+            pay_money:【支付金额】
+            pay_way:['移动支付', '支付卡支付']【支付方式】
+            ord_id:【订单id】
+            </code><br>
+            <code>
+查询支付记录-[GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改支付记录-[PUT]
+            action:update
+            pay_id:【支付记录id】
+            (pay_money):【支付金额】
+            (pay_way):【支付方式】
+            </code><br>
+            <code>
+删除支付记录-[DELETE]
+            action:delete
+            pay_id:【支付记录id】
+            </code>
+
+            <h3 id="section1.9">09 - 促销管理 - /promo</h3>
+            <code>
+添加促销 -  [POST]
+            action:add
+            promo_name:【促销名称】
+            promo_code:【促销码】
+            promo_multi:【促销倍数】
+            promo_start:【促销开始时间】
+            promo_end:【促销结束时间】
+            </code><br>
+            <code>
+查询促销 -  [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改促销 -  [PUT]
+            action:update
+            promo_id:【促销id】
+            promo_data:{
+                (promo_name):【促销名称】
+                (promo_code):【促销码】
+                (promo_multi):【促销倍数】
+                (promo_start):【促销开始时间】
+                (promo_end):【促销结束时间】
+            }
+            </code><br>
+            <code>
+删除促销 -  [DELETE]
+            action:delete
+            promo_id:【促销id】
+            </code>
+
+            <h3 id="section1.10">10 - 商户管理 - /shop</h3>
+            <code>
+添加商户 -  [POST]
+            action:add
+            shop_name:【商户名称】
+            shop_tel:【商户电话】
+            shop_pass:【商户邀请码】
+            (shop_head):【商户店长】
+            </code><br>
+            <code>
+查询商户 -  [GET]
+            action:query
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改商户 -  [PUT]
+            action:update
+            shop_id:【商户id】
+            shop_data:{
+                (shop_name):【商户名称】
+                (shop_tel):【商户名称】
+                (shop_head):【商户店长】
+                (shop_pass):【商户邀请码】
+            }
+            </code><br>
+            <code>
+删除商户 -  [DELETE]
+            action:delete
+            shop_id:【商户id】
+            </code>
+        </div>
+
+        <div>
+            <h2 id="section2">商户端 - /shop</h2>
+
+            <h3 id="section2.1">01 - 账号相关 - /account</h3>
+            <code>
+登录账号 -  [POST]
+            action:signin
+            username:【账号】
+            password:【密码】
+            </code><br>
+            <code>
+登出账号 -  [GET]
+            action:signout
+            </code><br>
+            <code>
+重置密码 -  [PUT]
+            action:reset
+            username:【账号】
+            old_pass:【旧密码】
+            new_pass:【新密码】
+            </code><br>
+
+            <h3 id="section2.2">02 - 菜品管理 - /dish</h3>
+            <code>
+添加菜品 -  [POST]
+            action:add
+            dish_shop:【菜品所属商户id】
+            dish_name:【菜品名】
+            dish_price:【菜品售价】
+            (dish_des):【菜品描述】
+            (dish_img):【菜品图片url】
+            </code><br>
+            <code>
+查询菜品 -  [GET]
+            action:query
+            shop_id:【商户id】
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改菜品 -  [PUT]
+            action:update
+            dish_id:【菜品id】
+            dish_data:{
+                (dish_name):【菜品名】
+                (dish_des):【菜品描述】
+                (dish_price):【菜品售价】
+                (dish_img):【菜品图片url】
+            }
+            </code><br>
+            <code>
+删除菜品 -  [DELETE]
+            action:delete
+            dish_id:【菜品id】
+            </code>
+
+            <h3 id="section2.3">03 - 门店员工管理 - /employee</h3>
+            <code>
+添加员工 -  [POST]
+            action:add
+            shop_id:【商户id】
+            emp_name:【员工姓名】
+            emp_number:【员工编号】
+            emp_tel:【员工电话】
+            emp_condition:['正常', '休假中', '已离职']【员工状态】
+            emp_role:【员工角色】
+            </code><br>
+            <code>
+查询员工 -  [GET]
+            action:query
+            shop_id:【商户id】
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+修改员工 -  [PUT]
+            action:update
+            emp_id:【员工id】
+            emp_data:{
+                (emp_name):【员工姓名】
+                (emp_tel):【员工电话】
+                (emp_number):【员工编号】
+                (emp_condition):【员工状态】
+                (emp_role):【员工角色】
+            }
+            </code><br>
+            <code>
+删除员工 -  [DELETE]
+            action:delete
+            emp_id:【员工id】
+            </code>
+
+            <h3 id="section2.3">04 - 订单管理 - /employee</h3>
+            <code>
+添加订单 -  [POST]
+            action:add
+            cus_id:【客户id】
+            shop_id:【商户id】
+            ord_money:
+            ord_list:[{
+                dish_id:【菜品id】
+                num:【菜品数量】
+            },{...}]
+            </code><br>
+            <code>
+查询订单 -  [GET]
+            action:query
+            shop_id:【商户id】
+            pagenum:【分页页码】
+            pagesize:【分页大小】
+            (keys):【过滤词】
+            </code><br>
+            <code>
+支付订单 -  [PUT]
+            action:pay
+            ord_number:【订单id】
+            </code><br>
+            <code>
+完成订单 -  [PUT]
+            action:finish
+            ord_number:【订单号】
+            </code><br>
+            <code>
+取消订单 -  [PUT]
+            action:cancel
+            ord_number:【订单号】
+            </code>
+
+            <h3 id="section2.5">05 - 支付记录管理 - /payment</h3>
+            <code>
+添加支付记录-[POST]
+            pay_money:【支付金额】
+            pay_way:['移动支付', '支付卡支付']【支付方式】
+            ord_id:【订单id】
+            </code>
+
+            <h3 id="section2.6">06 - 门店信息管理 - /shop</h3>
+            <code>
+查询门店 -  [GET]
+            action:query
+            shop_id:【商户id】
+            </code><br>
+            <code>
+修改门店 -  [PUT]
+            action:update
+            shop_id:【商户id】
+            shop_data:{
+                (shop_name):【商户名称】
+                (shop_tel):【商户电话】
+                (shop_head):【店长名称】
+                (shop_pass):【商户邀请码】
+            }
+            </code><br>
+            <code>
+注销门店 -  [DELETE]
+            action:delete
+            shop_id:【商户id】
+            </code>
+        </div>
+
+        <div>
+            <h2 id="section3">客户端 - /customer</h2>
+
+            <h3 id="section3.1">01 - 账号相关 - /account</h3>
+            <code>
+登录账号 -  [POST]
+            username:【账号】
+            password:【密码】
+            </code><br>
+            <code>
+登出账号 -  [GET]
+            action:signout
+            </code><br>
+            <code>
+注册账号 -  [POST]
+            username:【账号】
+            password:【密码】
+            email:【电子邮件】
+            name:【昵称】
+            (sex):【性别】
+            (birth):【生日】
+            (address):【地址】
+            </code><br>
+            <code>
+激活账号 -  [GET]
+            action:active
+            token:【口令（从邮件获得）】
+            </code><br>
+            <code>
+申请重置密码-[POST]
+            action:reset
+            email:【电子邮件】
+            </code><br>
+            <code>
+完成重置密码-[POST]
+            action:reset_done
+            token:【口令（从邮件获得）】
+            password:【新密码】
+            </code>
+
+            <h3 id="section3.2">02 - 顾客信息管理 - /customer</h3>
+            <code>
+获取顾客 -  [GET]
+            action:query
+            cus_id:【客户id】
+            </code><br>
+            <code>
+修改顾客 -  [PUT]
+            action:update
+            cus_id:【客户id】
+            cus_data:{
+                (email):【电子邮件】
+                (fname):【昵称】
+                (sex):【性别】
+                (birth):【生日】
+                (address):【地址】
+            }
+            </code><br>
+            <code>
+顾客注销 -  [DELETE]
+            action:delete
+            cus_id:【客户id】
+            </code>
+
+            <h3 id="section3.3">03 - 通知管理 - /notice</h3>
+            <code>
+获取通知 -  [GET]
+            cus_id:【客户id】
+            pagesize:【分页大小】
+            pagenum:【分页页码】
+            </code>
+
+            <h3 id="section3.4">04 - 订单管理 - /order</h3>
+            <code>
+获取通知 -  [GET]
+            cus_id:【客户id】
+            pagesize:【分页大小】
+            pagenum:【分页页码】
+            (start_time):【开始时间】
+            (end_time):【截止时间】
+            </code>
+
+            <h3 id="section3.5">05 - 支付卡管理 - /paycard</h3>
+            <code>
+支付卡申请 - [POST]
+            action:register
+            cus_id:【客户id】
+            </code><br>
+            <code>
+支付卡激活 - [GET]
+            action:active
+            token:
+            </code><br>
+            <code>
+支付卡注销 - [DELETE]
+            action:delete
+            card_number:
+            </code><br>
+            <code>
+支付卡查询 - [GET]
+            action:query
+            cus_id:【客户id】
+            </code><br>
+            <code>
+支付卡充消 - [PUT]
+            action:update
+            card_number:【支付卡卡号】
+            money:
+            </code>
+
+            <h3 id="section3.6">06 - 促销管理 - /promo</h3>
+            <code>
+促销码验证 - [POST]
+            promo_code:【促销码】
+            </code>
+        </div>
+    </div>
+    <script>
+        var menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(function (menuItem) {
+            var link = menuItem.querySelector('a');
+            link.addEventListener('click', toggleSubMenu);
+        });
+    </script>
+</body>
+
+</html>
