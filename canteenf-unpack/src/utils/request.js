@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseURL_main } from '../config/baseURL.js'
+import { baseURL_main } from '../config/main.js'
 
 //创建axios
 var instance = axios.create({

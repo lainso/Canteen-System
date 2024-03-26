@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-import { baseURL_main } from './src/config/baseURL.js'
+import { baseURL_main, server_host, server_port } from './src/config/main.js'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -10,8 +10,8 @@ export default defineConfig({
     vue(),
   ],
   server: {
-    host: '192.168.159.133',
-    port: 80,
+    host: server_host,
+    port: server_port,
     proxy: {
       'api': {
         target: baseURL_main,
