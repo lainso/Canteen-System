@@ -1,0 +1,1 @@
+import{C as s}from"./index-Cry4P2XB.js";const t=s("user",{state:()=>({username:""}),getters:{getUsername:e=>e.username},actions:{setUsername(e){this.username=e}},persist:{enabled:!0,strategies:[{key:"user",storage:localStorage}]}});export{t as u};

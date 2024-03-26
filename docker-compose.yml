@@ -3,7 +3,7 @@ services:
     image: redis:latest
     container_name: canteen-redis
     ports:
-      - "6379:6379"
+      - "6378:6379"
 
   canteen-mysql:
     build:
@@ -14,7 +14,7 @@ services:
       MYSQL_ROOT_PASSWORD: Lyq123456!!
       MYSQL_DATABASE: canteen
     ports:
-      - "3306:3306"
+      - "3305:3306"
     volumes:
       - mysql-data-canteen:/var/lib/mysql
 
@@ -24,7 +24,7 @@ services:
       dockerfile: Dockerfile
     container_name: canteen-b
     ports:
-      - "8000:8000"
+      - "8001:8000"
     depends_on:
       - canteen-mysql
       - canteen-redis
@@ -35,7 +35,7 @@ services:
       dockerfile: Dockerfile
     container_name: canteen-f
     ports:
-      - "80:80"
+      - "88:80"
     depends_on:
       - canteen-b
 
