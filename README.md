@@ -12,3 +12,8 @@
     1.canteenb/Canteen/config.py
     2.canteenf-unpack/src/config/main.js
     ⭐：修改此项需要重新打包，并将新文件覆盖到canteenf目录中
+
+系统提供三个身份，分别使用不同url登录：
+    顾客：/
+    店铺：/shop
+    管理员：/super
