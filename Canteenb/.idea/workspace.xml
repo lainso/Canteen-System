@@ -5,47 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e2821ca-958d-4979-a16a-bb65a10d434e" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/active-mRZSvYXh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/addOrder-CfQ3B5Et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardActive-BZ3bupK1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardApply-CvmbVVxs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardDel-C0UABRIU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardUpdate-BzGl0gmq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/customer-CVy_7e6-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/dish-Dltg5fao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/dish-kbwFU2ow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emailStore-CTxKOj7e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emp-C5F5VOep.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emp-DxRn8Otd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-BpAU4Mv_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-Cni_yBT1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-DMXZHAZ4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-Z_0ZeioV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/joinShop-Bbx5l9Mp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-BoGRso3a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-DByt89Lu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-DoQsqlD8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-BkCw1cMX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-C9oRD_sx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-DQNOwMhg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-BbG7AzLz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-BllcfRqW.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-DKx3vuKq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-CIxtkA0k.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-LVr8Ss5c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-v_KRBnlO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/pageError-Bp8uwwkQ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/paycard-Zx4y4i-Y.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/payment-CjtZxeBj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/promo-BbKAuL6C.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/register-B8ETDBwf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetDone-C-sfsMFS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-B1NSTHEO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-C3qS_Yhu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/shop-ab0NxonU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/superAdmin-C4Fd3v-T.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/userStore-C7y7cZWo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/active-B-r6_gnT.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/active-BwFYwboA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/addOrder-CLZ7GJRx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardActive-vnzV9OIy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardApply-wY5fZHwv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardDel-cKmWy_vj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/cardUpdate-Cbz0zuEf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/customer-BQRO3T7t.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/dish-1UjzRXSx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/dish-CXBdm8dT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emailStore-Bi6ZOoPq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emp-C__J7ZSq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/emp-DQfhTB9c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-1ylQXpdG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-Borjb579.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-C2u0wXDR.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-C6gXY6Qx.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-Ci94Kvof.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-CwqOz0QO.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/index-PTidiohF.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/joinShop-CVe2qAVA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/joinShop-CqKHJsL3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-4tJAV5YA.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-B0pborf3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-Dko05ZMJ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-NC-OS734.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-UUSwczwP.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/login-V5OdpnBk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-Bdy2fWnO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-C9mYCLhq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/me-CZkxM5dC.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-CIkZ3-64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/noti-t3jyoSj5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-D2v26YpG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-D6ksc_yY.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/order-DJ-BNt-j.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/pageError-tkHNA38e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/paycard-D2N_vOZu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/payment-LyNqd-oM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/promo-BO2vBDCt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/register-CRc1-7JG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/register-CrMOpxXL.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetDone-BzaG_FLG.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetDone-C74rS6yO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-BJGlJu3C.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-Bvi3A9Yf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-CpEf-l6P.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/resetPass-N1jXsWYd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/shop-Drmc2ja8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/superAdmin-DqliPZsm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Canteenf/assets/userStore-B3AV-eTo.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Canteenf/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Canteenf/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/active.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/active.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/resetDone.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/resetDone.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/resetPass.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/resetPass.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/shop/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/shop/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/shop/joinShop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/shop/joinShop.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/shop/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/shop/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/super/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/super/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/super/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/super/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../canteenf-unpack/src/views/super/resetPass.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../canteenf-unpack/src/views/super/resetPass.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +273,7 @@
       <workItem from="1711122814865" duration="2029000" />
       <workItem from="1711438401242" duration="1157000" />
       <workItem from="1711440937563" duration="758000" />
-      <workItem from="1711462096389" duration="492000" />
+      <workItem from="1711462096389" duration="1456000" />
     </task>
     <servers />
   </component>

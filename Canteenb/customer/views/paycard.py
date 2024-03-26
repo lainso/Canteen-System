@@ -41,23 +41,22 @@ def register(request):
             # 邮件激活
             sub = '【餐饮系统】支付卡激活邮件'
             msg = '''
-            <div style="
-            background-color: #f0fcff;
-            margin: auto;
-            text-align: center;
-            border-radius: 20px;">
-                <br>
-                <div style="display: flex; justify-content: center;">
-                    <span style="font-size: 2.3rem; font-weight: bold;">餐 饮 系 统</span>
+                <div style="
+                background-color: #f6f8fb;
+                margin: auto;
+                text-align: center;
+                border-radius: 20px;">
+                    <br>
+                    <div style="display: flex; justify-content: center;">
+                        <span style="font-size: 2.3rem; font-weight: bold;">餐 饮 系 统</span>
+                    </div>
+                    <p style="font-weight: lighter; font-size: 15px;">支 付 卡 激 活 </p>
+                    <p>尊敬的 {}<br>欢迎使用系统支付卡系统</p>
+                    <div>
+                        <p target="_blank">您的激活码为：<span style="font-weight: bolder; ">{}</span></p>
+                    </div>
+                    <br>
                 </div>
-                <p style="font-weight: lighter; font-size: 15px;">🔑 支 付 卡 激 活 </p>
-                <p>尊敬的 {}<br>欢迎申请系统支付卡</p>
-                <div>
-                    <p target="_blank" style="text-decoration: none; color: rgb(59, 130, 246);
-                    "><span>您的激活码为：</span>{}</p>
-                </div>
-                <br>
-            </div>
             '''.format(fname, mix_code)
             send_mail(subject=sub, message=msg, from_email=can_set.EMAIL_HOST_USER, recipient_list=[email, ],
                       html_message=msg)

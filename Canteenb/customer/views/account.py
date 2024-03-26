@@ -73,24 +73,24 @@ def register(request):
             # 邮件激活
             sub = '【餐饮系统】用户激活邮件'
             msg = '''
-            <div style="
-            background-color: #f0fcff;
-            margin: auto;
-            text-align: center;
-            border-radius: 20px;">
-                <br>
-                <div style="display: flex; justify-content: center;">
-                    <span style="font-size: 2.3rem; font-weight: bold;">餐 饮 系 统</span>
+                <div style="
+                background-color: #f6f8fb;
+                margin: auto;
+                text-align: center;
+                border-radius: 20px;">
+                    <br>
+                    <div style="display: flex; justify-content: center;">
+                        <span style="font-size: 2.3rem; font-weight: bold;">餐 饮 系 统</span>
+                    </div>
+                    <p style="font-weight: lighter; font-size: 15px;">用 户 激 活 </p>
+                    <p>尊敬的 {}<br>欢迎注册餐饮系统</p>
+                    <div>
+                        <p target="_blank">您的激活验证码为：<span style="font-weight: bolder; ">{}</span></p>
+                    </div>
+                    <br>
                 </div>
-                <p style="font-weight: lighter; font-size: 15px;">🔑 用 户 激 活 </p>
-                <p>尊敬的 {}<br>欢迎注册餐饮系统</p>
-                <div>
-                    <p target="_blank" style="text-decoration: none; color: rgb(59, 130, 246);
-                    "><span>您的激活验证码为：</span>{}</p>
-                </div>
-                <br>
-            </div>
             '''.format(fname, code)
+
             send_mail(subject=sub, message=msg, from_email=can_set.EMAIL_HOST_USER, recipient_list=[email, ],
                       html_message=msg)
             return JsonResponse({'code': 0, 'info': '注册提交成功'})
@@ -136,23 +136,22 @@ def reset(request):
         # 密码重置邮件
         sub = '【餐饮系统】用户密码重置邮件'
         msg = '''
-        <div style="
-        background-color: #f0fcff;
-        margin: auto;
-        text-align: center;
-        border-radius: 20px;">
-            <br>
-            <div style="display: flex; justify-content: center;">
-                <span style="font-size: 2.3rem; font-weight: bold;">餐 饮 系 统</span>
+            <div style="
+            background-color: #f6f8fb;
+            margin: auto;
+            text-align: center;
+            border-radius: 20px;">
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <span style="font-size: 2.3rem; font-weight: bold;">餐 饮 系 统</span>
+                </div>
+                <p style="font-weight: lighter; font-size: 15px;">密 码 重 置 </p>
+                <p>尊敬的 {}<br></p>
+                <div>
+                    <p target="_blank">您的重置验证码为：<span style="font-weight: bolder; ">{}</span></p>
+                </div>
+                <br>
             </div>
-            <p style="font-weight: lighter; font-size: 15px;">🔑 密 码 重 置 </p>
-            <p>尊敬的 {}<br></p>
-            <div>
-                <p target="_blank" style="text-decoration: none; color: rgb(59, 130, 246);
-                "><span>您的重置验证码为：</span>{}</p>
-            </div>
-            <br>
-        </div>
         '''.format(fname, code)
         send_mail(subject=sub, message=msg, from_email=can_set.EMAIL_HOST_USER, recipient_list=[email, ],
                   html_message=msg)

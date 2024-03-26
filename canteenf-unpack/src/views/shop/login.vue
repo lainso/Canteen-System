@@ -89,7 +89,7 @@ const onReset = (formEl) => {
     display: flex;
     align-items: center;
     height: 100vh;
-    background-color: #c3cbd6;
+    background-color: #f6f8fb;
 
     .left {
         width: 63%;
