@@ -17,7 +17,7 @@
             <el-row class="tac">
                 <el-col :span="24">
                     <br>
-                    <el-menu default-active="2" class="el-menu-vertical-demo">
+                    <el-menu default-active="3" class="el-menu-vertical-demo">
                         <el-menu-item index="1" @click="GoIndex">
                             <el-icon>
                                 <HomeFilled />
