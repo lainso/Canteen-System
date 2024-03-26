@@ -11,5 +11,4 @@
 涉及配置文件：
     1.canteenb/Canteen/config.py
     ----修改以下文件需要重新执行 npm run build----
-    2.canteenf-unpack/vite.config.js
-    3.canteenf-unpack/src/config/baseURL.js
+    3.canteenf-unpack/src/config/main.js
