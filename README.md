@@ -10,7 +10,7 @@
 
 ⭐：docker + docker-compose
 
-### 安装
+## 安装
 
 1. 根据 `canteenb/Canteen/config_example.py` 模板在同一级目录下创建 `config.py` 配置文件，对系统进行配置。
 
