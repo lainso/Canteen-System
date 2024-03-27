@@ -49,23 +49,23 @@ docker-compose up -d
 ```markdown
 顾客端：
 > URL：/
-> 账号：123<br>
-> 密码：123456<br>
+> 账号：123
+> 密码：123456
 
 商户端：
 > URL：/shop
-> 账号：456<br>
-> 密码：123456<br>
+> 账号：456
+> 密码：123456
 
 管理员端：
 > URL：/super
-> 账号：789<br>
-> 密码：123456<br>
+> 账号：789
+> 密码：123456
 
 账户管理员（仅用于管理管理员账号，无其它权限，请谨慎删除此账号）：
 > URL：/super
-> 账号：SuperAdminForSystem<br>
-> 密码：SuperAdmin<br>
+> 账号：SuperAdminForSystem
+> 密码：SuperAdmin
 ```
 
 ### 使用示例
