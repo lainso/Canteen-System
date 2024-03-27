@@ -33,7 +33,7 @@ docker-compose up -d
 后端：django, mysql, redis
 
 
-### 特性
+### 项目端口占用
 
 项目涉及四个容器，需要占用宿主机的四个端口，考虑到常用端口占用，本项目默认绕开了这些端口，如果仍发生了冲突需要自定义端口，可以考虑修改 `docker-compose.yml` 文件，且需要同步更新 `canteenb/Canteen/config.py` 。
 
