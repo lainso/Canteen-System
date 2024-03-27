@@ -14,9 +14,19 @@
 
 ### 安装
 
-1. 根据`canteenb/Canteen/config_example.py` 模板创建 `config.py` 配置文件，对系统进行配置。
+1. 根据 `canteenb/Canteen/config_example.py` 模板在同一级目录下创建 `config.py` 配置文件，对系统进行配置。
 
-2. 使用命令构建镜像并启动服务：
+2. 修改 `canteenf-unpack/src/config/main.js` 文件，定义前后端的接口地址。
+
+3. 在 `canteenf-unpack` 下运行构建命令，将前端进行打包。
+
+```bash
+npm run build
+```
+
+4. 将 `canteenf-unpack/dist` 中的所有内容移动到 `canteenf/` 目录下。
+
+4. 使用命令构建镜像并启动服务：
 
 ```bash
 docker-compose up -d
