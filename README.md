@@ -8,16 +8,18 @@
 
 后端：django, mysql, redis
 
+### 部署环境要求
+
+docker + docker-compose
+
 ### 安装
 
-1. 修改 `canteenb/Canteen/config.py` ，对系统进行配置。
+1. 根据`canteenb/Canteen/config_example.py`模板创建`config.py`配置文件，对系统进行配置。
 
-2. 使用命令
+2. 使用命令构建镜像并启动服务
 
 ```bash
-git clone https://example.com/your-project.git
-cd your-project
-npm install
+docker-compose up -d
 ```
 
 ### 使用示例
