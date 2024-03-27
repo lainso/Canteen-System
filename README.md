@@ -10,7 +10,9 @@
 
 ### 安装
 
-介绍如何安装项目，比如克隆仓库或者通过包管理工具安装。
+1. 修改 `canteenb/Canteen/config.py` ，对系统进行配置。
+
+2. 使用命令
 
 ```bash
 git clone https://example.com/your-project.git
