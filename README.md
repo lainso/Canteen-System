@@ -26,7 +26,7 @@ npm run build
 
 4. 将 `canteenf-unpack/dist` 中的所有内容移动到 `canteenf/` 目录下。
 
-4. 使用命令构建镜像并启动服务：
+5. 使用命令构建镜像并启动服务：
 
 ```bash
 docker-compose up -d
