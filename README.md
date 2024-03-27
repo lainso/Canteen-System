@@ -2,12 +2,6 @@
 
 本系统为前后端分离系统。前端使用vue3构建，后端则采用了django框架。
 
-### 涉及技术栈
-
-前端：vue3, pinia, vue-router, element-plus, axios
-
-后端：django, mysql, redis
-
 ### 部署环境要求
 
 ⭐：docker + docker-compose
@@ -32,8 +26,20 @@ npm run build
 docker-compose up -d
 ```
 
-### 自定义安装
+### 涉及技术栈
 
+前端：vue3, pinia, vue-router, element-plus, axios
+
+后端：django, mysql, redis
+
+
+### 特性
+
+项目涉及四个容器，需要占用宿主机的四个端口，考虑到常用端口占用，本项目默认绕开了这些端口，如果仍发生了冲突需要自定义端口，可以考虑修改 `docker-compose.yml` 文件，且需要同步更新 `canteenb/Canteen/config.py` 。
+
+- 特性1
+- 特性2
+- 特性3
 
 ### 使用示例
 
@@ -53,13 +59,7 @@ const yourProject = require('your-project');
 yourProject.doSomething();
 ```
 
-### 特性
 
-列出项目的几个主要特性。
-
-- 特性1
-- 特性2
-- 特性3
 
 ### 支持与贡献
 
