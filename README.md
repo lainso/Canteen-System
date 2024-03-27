@@ -6,11 +6,13 @@
 
 后端采用了django框架，引入了 mailer 组件进行发送邮件，并采用了 redis 缓存方案优化数据库性能。
 
+## 安装
+
 ### 部署环境要求
 
 ⭐：docker + docker-compose
 
-## 安装
+### 部署步骤
 
 1. 根据 `canteenb/Canteen/config_example.py` 模板在同一级目录下创建 `config.py` 配置文件，对系统进行配置。
 
