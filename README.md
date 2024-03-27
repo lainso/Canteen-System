@@ -67,25 +67,3 @@ docker-compose up -d
 > 账号：SuperAdminForSystem
 > 密码：SuperAdmin
 ```
-
-### 使用示例
-
-演示如何使用你的项目，给出一些代码示例。
-
-```python
-# Python示例
-import your_project
-
-your_project.do_something()
-```
-
-```javascript
-// JavaScript示例
-const yourProject = require('your-project');
-
-yourProject.doSomething();
-```
-
-### 许可证
-
-说明项目的许可证。
