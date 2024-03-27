@@ -37,9 +37,10 @@ docker-compose up -d
 
 项目涉及四个容器，需要占用宿主机的四个端口，考虑到常用端口占用，本项目默认绕开了这些端口，如果仍发生了冲突需要自定义端口，可以考虑修改 `docker-compose.yml` 文件，且需要同步更新 `canteenb/Canteen/config.py` 。
 
-- 特性1
-- 特性2
-- 特性3
+- 88：前端nginx容器端口
+- 8001：后端django容器端口
+- 3305：mysql容器端口
+- 6378：redis容器端口
 
 ### 使用示例
 
