@@ -42,6 +42,28 @@ docker-compose up -d
 - 3305：mysql容器端口
 - 6378：redis容器端口
 
+### 系统自带测试账号
+
+为方便开箱即用，本系统数据库并非为空，提供了以下测试账号，若需要进行上线，请考虑删除这些账号。
+
+```markdown
+顾客端：/
+> 账号：123<br>
+> 密码：123456<br>
+
+商户端：/shop
+> 账号：456<br>
+> 密码：123456<br>
+
+管理员端：/super
+> 账号：789<br>
+> 密码：123456<br>
+
+账户管理员（仅用于管理管理员账号，无其它权限，请谨慎删除此账号）：/super
+> 账号：SuperAdminForSystem<br>
+> 密码：SuperAdmin<br>
+```
+
 ### 使用示例
 
 演示如何使用你的项目，给出一些代码示例。
@@ -58,18 +80,6 @@ your_project.do_something()
 const yourProject = require('your-project');
 
 yourProject.doSomething();
-```
-
-
-
-### 支持与贡献
-
-介绍用户在使用过程中遇到问题如何获取支持，以及如何为项目做出贡献。
-
-```markdown
-有疑问或需要帮助，请提交[issue](链接到你的issue页面)。
-
-如果您想做出贡献，请首先阅读`CONTRIBUTING.md`（如果你有这样的文档），然后发送一个拉请求。
 ```
 
 ### 许可证
