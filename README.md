@@ -1,6 +1,10 @@
 ## 内部餐饮系统
 
-本系统为前后端分离系统。前端使用vue3构建，后端则采用了django框架。
+本系统为前后端分离系统。
+
+前端使用 vue3 构建，涉及 pinia, vue-router, element-plus, axios。
+
+后端采用了django框架，引入了 mailer 组件进行发送邮件，并采用了 redis 缓存方案优化数据库性能。
 
 ### 部署环境要求
 
@@ -25,13 +29,6 @@ npm run build
 ```bash
 docker-compose up -d
 ```
-
-### 涉及技术栈
-
-前端：vue3, pinia, vue-router, element-plus, axios
-
-后端：django, mysql, redis
-
 
 ### 项目端口占用
 
