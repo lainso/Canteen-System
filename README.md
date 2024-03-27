@@ -1,33 +1,59 @@
-构建步骤：<br>
-    > 1.修改canteenb/Canteen/config.py，对系统进行配置。<br>
-    > 2.命令行运行docker-compose up -d。<br>
-<br>
-系统使用端口：<br>
-    > 88：前端服务<br>
-    > 8001：后端服务<br>
-    > 3305：mysql<br>
-    > 6378：redis<br>
-<br>
-涉及配置文件：<br>
-    > 1.canteenb/Canteen/config.py<br>
-    > 2.canteenf-unpack/src/config/main.js<br>
-    ⭐：修改此项需要重新打包，并将新文件覆盖到canteenf目录中<br>
-<br>
-系统提供三个身份，分别使用不同url登录：<br>
-    > 顾客：/<br>
-    > 店铺：/shop<br>
-    > 管理员：/super<br>
-<br>
-数据库中提供了测试账号：<br>
-    > 顾客：<br>
-        > > 账号：123<br>
-        > > 密码：123456<br>
-    > 店铺：<br>
-        > > 账号：456<br>
-        > > 密码：123456<br>
-    > 管理员：<br>
-        > > 账号：789<br>
-        > > 密码：123456<br>
-    > 超级管理员（仅用于管理管理员账号，无其它权限，请勿删除此账号）：<br>
-        > > 账号：SuperAdminForSystem<br>
-        > > 密码：SuperAdmin<br>
+# 项目标题
+
+这里是项目的简短描述，概要说明项目的目的和用途。
+
+## 正文段落
+
+在正文部分，你可以详细介绍项目、功能、使用方法、安装步骤、使用示例等。
+
+比如，如果你的项目是一个简单的脚本，你可以包括如何安装和运行它：
+
+### 安装
+
+介绍如何安装项目，比如克隆仓库或者通过包管理工具安装。
+
+```bash
+git clone https://example.com/your-project.git
+cd your-project
+npm install
+```
+
+### 使用示例
+
+演示如何使用你的项目，给出一些代码示例。
+
+```python
+# Python示例
+import your_project
+
+your_project.do_something()
+```
+
+```javascript
+// JavaScript示例
+const yourProject = require('your-project');
+
+yourProject.doSomething();
+```
+
+### 特性
+
+列出项目的几个主要特性。
+
+- 特性1
+- 特性2
+- 特性3
+
+### 支持与贡献
+
+介绍用户在使用过程中遇到问题如何获取支持，以及如何为项目做出贡献。
+
+```markdown
+有疑问或需要帮助，请提交[issue](链接到你的issue页面)。
+
+如果您想做出贡献，请首先阅读`CONTRIBUTING.md`（如果你有这样的文档），然后发送一个拉请求。
+```
+
+### 许可证
+
+说明项目的许可证。
