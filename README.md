@@ -27,9 +27,10 @@
 
 2. 修改 `canteenf-unpack/src/config/main.js` 文件，定义前后端的接口地址。
 
-3. 在 `canteenf-unpack` 下运行构建命令，将前端进行打包。
+3. 在 `canteenf-unpack` 下运行安装和构建命令，将前端进行打包。
 
 ```bash
+npm install
 npm run build
 ```
 
