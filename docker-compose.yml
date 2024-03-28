@@ -22,7 +22,7 @@ services:
 
   canteen-b:
     build:
-      context: ./canteenb
+      context: ./Canteenb
       dockerfile: Dockerfile
     container_name: canteen-b
     restart: always
@@ -34,7 +34,7 @@ services:
 
   canteen-f:
     build:
-      context: ./canteenf
+      context: ./Canteenf
       dockerfile: Dockerfile
     container_name: canteen-f
     restart: always
