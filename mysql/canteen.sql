@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 127.0.0.1
+ Source Server         : Huawei-Canteen
  Source Server Type    : MySQL
- Source Server Version : 80030 (8.0.30)
- Source Host           : localhost:3306
+ Source Server Version : 80027 (8.0.27)
+ Source Host           : 139.9.41.156:3305
  Source Schema         : canteen
 
  Target Server Type    : MySQL
- Target Server Version : 80030 (8.0.30)
+ Target Server Version : 80027 (8.0.27)
  File Encoding         : 65001
 
- Date: 26/03/2024 20:21:43
+ Date: 30/03/2024 22:54:19
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `auth_group`  (
   `name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of auth_group
@@ -45,7 +45,7 @@ CREATE TABLE `auth_group_permissions`  (
   INDEX `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm`(`permission_id` ASC) USING BTREE,
   CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of auth_group_permissions
@@ -63,7 +63,7 @@ CREATE TABLE `auth_permission`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_permission_content_type_id_codename_01ab375a_uniq`(`content_type_id` ASC, `codename` ASC) USING BTREE,
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 73 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 73 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of auth_permission
@@ -154,11 +154,12 @@ CREATE TABLE `comment_notifications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `comment_notifications_cus_id_id_61fc182c_fk_customer_customer_id`(`cus_id_id` ASC) USING BTREE,
   CONSTRAINT `comment_notifications_cus_id_id_61fc182c_fk_customer_customer_id` FOREIGN KEY (`cus_id_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of comment_notifications
 -- ----------------------------
+INSERT INTO `comment_notifications` VALUES (1, '你好', '欢迎使用餐饮系统', '2024-03-27 07:32:19', 21);
 INSERT INTO `comment_notifications` VALUES (2, '新春特惠！', '即日起进行支付卡储值，可享受5%额外储值金额！多充多送，欢迎参加！优惠码：HAPPYNEWYEAR2024', '2024-03-02 22:01:15', 21);
 
 -- ----------------------------
@@ -171,16 +172,16 @@ CREATE TABLE `comment_payment`  (
   `pay_time` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `pay_money` decimal(10, 2) NOT NULL,
   `pay_way` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `ord_id_id` bigint NULL DEFAULT NULL,
+  `ord_id_id` bigint NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `comment_payment_ord_id_id_81fa8053_fk_shop_order_id`(`ord_id_id` ASC) USING BTREE,
   CONSTRAINT `comment_payment_ord_id_id_81fa8053_fk_shop_order_id` FOREIGN KEY (`ord_id_id`) REFERENCES `shop_order` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of comment_payment
 -- ----------------------------
-INSERT INTO `comment_payment` VALUES (10, '1710916981yMAgkz8H', '2024-03-20 14:43:01', 18.00, '支付卡', 19);
+INSERT INTO `comment_payment` VALUES (1, '1710916981yMAgkz8H', '2024-03-20 14:43:01', 18.00, '支付卡', 19);
 
 -- ----------------------------
 -- Table structure for comment_promotions
@@ -195,13 +196,13 @@ CREATE TABLE `comment_promotions`  (
   `promo_multiple` decimal(10, 2) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `promo_code`(`promo_code` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of comment_promotions
 -- ----------------------------
-INSERT INTO `comment_promotions` VALUES (1, '新春优惠', '2024-03-01T16:00:00.000Z', '2025-03-01T16:00:00.000Z', 'HAPPYNEWYEAR2024', 1.05);
-INSERT INTO `comment_promotions` VALUES (2, '清明优惠', '2024-03-01T16:00:00.000Z', '2024-03-04T16:00:00.000Z', 'QINGMING2024', 1.10);
+INSERT INTO `comment_promotions` VALUES (1, '新春优惠', '2024-02-09T16:00:00.000Z', '2025-02-25T16:00:00.000Z', 'HAPPYNEWYEAR2024', 1.05);
+INSERT INTO `comment_promotions` VALUES (2, '清明优惠', '2024-04-04T16:00:00.000Z', '2024-04-06T16:00:00.000Z', 'QINGMING2024', 1.10);
 
 -- ----------------------------
 -- Table structure for customer_customer
@@ -219,7 +220,7 @@ CREATE TABLE `customer_customer`  (
   `is_staff` tinyint(1) NOT NULL,
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL,
-  `cus_tel` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `cus_tel` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL DEFAULT NULL,
   `cus_sex` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL DEFAULT NULL,
   `cus_birth` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL DEFAULT NULL,
   `cus_address` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL,
@@ -227,15 +228,15 @@ CREATE TABLE `customer_customer`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username` ASC) USING BTREE,
   UNIQUE INDEX `email`(`email` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of customer_customer
 -- ----------------------------
-INSERT INTO `customer_customer` VALUES (21, 'pbkdf2_sha256$390000$HfDTh0JwPNOAwN6boj8xPJ$JiB5OcnPTGcpLStaciaW5n4zJyBMnrBS25j1WSaj5Pw=', '2024-03-26 08:29:59.477257', 0, '123', '耶耶', '', 'customer@system.com', 0, 1, '2024-02-23 12:25:12.405661', '13000000000', '女', '2024-03-24T16:00:00.000Z', '广东省广州市', 'customer');
-INSERT INTO `customer_customer` VALUES (25, 'pbkdf2_sha256$390000$4ewRdN1l8Q0CtMzRHnyAt9$W28X0+QHEJX6yP+A/rU88A8pz/kyKWSPd+Dd/2aiSIc=', '2024-03-20 06:42:49.012296', 0, '456', '小凌', '', 'shop@system.com', 0, 1, '2024-02-29 14:58:26.372319', '18000000000', '男', '2024-02-26T16:00:00.000Z', '广东省深圳市', 'shop');
-INSERT INTO `customer_customer` VALUES (26, 'pbkdf2_sha256$390000$Fy79B8Q9f68lhz4ZFAxFH8$513CASE+RFqh0/Myaex7USOOalEvSdUSKw8yIMVujR4=', '2024-03-26 08:34:19.945735', 0, '789', '小刘', '', 'admin@system.com', 0, 1, '2024-03-04 12:51:21.171361', '17300000000', '女', '2001-08-19T16:00:00.000Z', '河南省驻马店市', 'super');
-INSERT INTO `customer_customer` VALUES (32, 'pbkdf2_sha256$390000$Hthk5DkJqv6m0Hgqv6uUDN$mwAqqJm1VG7JfurC5zNEDsyxHp0+xYtLeDbQcmRHvNo=', '2024-03-20 06:42:33.881303', 1, 'SuperAdminForSystem', '', '', 'SuperAdmin@system.com', 1, 1, '2024-03-20 05:34:16.178958', '', NULL, NULL, NULL, 'super');
+INSERT INTO `customer_customer` VALUES (1, 'pbkdf2_sha256$390000$Hthk5DkJqv6m0Hgqv6uUDN$mwAqqJm1VG7JfurC5zNEDsyxHp0+xYtLeDbQcmRHvNo=', '2024-03-28 01:05:43.128183', 1, 'SuperAdminForSystem', '', '', 'SuperAdmin@system.com', 1, 1, '2024-03-20 05:34:16.178958', '', NULL, NULL, NULL, 'super');
+INSERT INTO `customer_customer` VALUES (21, 'pbkdf2_sha256$390000$HfDTh0JwPNOAwN6boj8xPJ$JiB5OcnPTGcpLStaciaW5n4zJyBMnrBS25j1WSaj5Pw=', '2024-03-29 06:29:26.198489', 0, '123', '耶耶', '', 'customer@system.com', 0, 1, '2024-02-23 12:25:12.405661', '13000000000', '女', '2024-03-24T16:00:00.000Z', '广东省广州市', 'customer');
+INSERT INTO `customer_customer` VALUES (25, 'pbkdf2_sha256$390000$4ewRdN1l8Q0CtMzRHnyAt9$W28X0+QHEJX6yP+A/rU88A8pz/kyKWSPd+Dd/2aiSIc=', '2024-03-29 03:21:24.946777', 0, '456', '小凌', '', 'shop@system.com', 0, 1, '2024-02-29 14:58:26.372319', '18000000000', '男', '2024-02-26T16:00:00.000Z', '广东省深圳市', 'shop');
+INSERT INTO `customer_customer` VALUES (26, 'pbkdf2_sha256$390000$Fy79B8Q9f68lhz4ZFAxFH8$513CASE+RFqh0/Myaex7USOOalEvSdUSKw8yIMVujR4=', '2024-03-29 03:16:26.948979', 0, '789', '小刘', '', 'admin@system.com', 0, 1, '2024-03-04 12:51:21.171361', '17300000000', '女', '2001-08-19T16:00:00.000Z', '河南省驻马店市', 'super');
 
 -- ----------------------------
 -- Table structure for customer_customer_groups
@@ -250,7 +251,7 @@ CREATE TABLE `customer_customer_groups`  (
   INDEX `customer_customer_groups_group_id_a005825a_fk_auth_group_id`(`group_id` ASC) USING BTREE,
   CONSTRAINT `customer_customer_gr_customer_id_cc388c92_fk_customer_` FOREIGN KEY (`customer_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `customer_customer_groups_group_id_a005825a_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of customer_customer_groups
@@ -269,7 +270,7 @@ CREATE TABLE `customer_customer_user_permissions`  (
   INDEX `customer_customer_us_permission_id_b5679413_fk_auth_perm`(`permission_id` ASC) USING BTREE,
   CONSTRAINT `customer_customer_us_customer_id_0dffe549_fk_customer_` FOREIGN KEY (`customer_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `customer_customer_us_permission_id_b5679413_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of customer_customer_user_permissions
@@ -288,12 +289,12 @@ CREATE TABLE `customer_paycard`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `cus_id_id`(`cus_id_id` ASC) USING BTREE,
   CONSTRAINT `customer_paycard_cus_id_id_feb3fb64_fk_customer_customer_id` FOREIGN KEY (`cus_id_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of customer_paycard
 -- ----------------------------
-INSERT INTO `customer_paycard` VALUES (14, '1709382600y85tov', '已激活', 21, 10.00);
+INSERT INTO `customer_paycard` VALUES (1, '1709382600y85tov', '已激活', 21, 10.00);
 
 -- ----------------------------
 -- Table structure for django_admin_log
@@ -314,7 +315,7 @@ CREATE TABLE `django_admin_log`  (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_customer_customer_id` FOREIGN KEY (`user_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `django_admin_log_chk_1` CHECK (`action_flag` >= 0)
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of django_admin_log
@@ -330,7 +331,7 @@ CREATE TABLE `django_content_type`  (
   `model` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `django_content_type_app_label_model_76bd3d3b_uniq`(`app_label` ASC, `model` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of django_content_type
@@ -364,7 +365,7 @@ CREATE TABLE `django_migrations`  (
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of django_migrations
@@ -418,7 +419,7 @@ CREATE TABLE `django_session`  (
   `expire_date` datetime(6) NOT NULL,
   PRIMARY KEY (`session_key`) USING BTREE,
   INDEX `django_session_expire_date_a5c62663`(`expire_date` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of django_session
@@ -431,6 +432,8 @@ INSERT INTO `django_session` VALUES ('9u36yezw2pd77tp2bq7lcvq290xxlx6z', 'eyJhYz
 INSERT INTO `django_session` VALUES ('a2nevt2s2oqcacyxfvif6edd59awpadi', '.eJxVjMsOgjAUBf-la9NQ0La4dO83kPsUfFBDy8IY_11IWOj2zJx5mw7m0ndzlqkb2BxN7czud0Sgm4wr4SuMl2QpjWUa0K6K3Wi258RyP23uX6CH3C9vZOEatYrBHWJFEoKgV0_aOAGqAro2UOOCKkrLUaMnFvEe9h5QnC7RNVdeT1lqNOeSHjKZzxeKGkGm:1rmqmW:SDbWablca_TK7MRTpmTmG59C7V2MJiYVdjG1FgqN0SU', '2024-04-03 07:54:40.652916');
 INSERT INTO `django_session` VALUES ('mmcujo04jbfgek5a8m1qo5zmlyo03cuk', '.eJxNzDtuAzEMBcC7qE5BSvz6NhRXDwgQJEXKIHe3O28_mL_h2adE_KKEnEW5ABGbu0LbusdjfNXn9-_P-BgFBHgyZ6iAYmfxWftabAjbcrfsyqcj3CNFmXdqlpAf9XJaerdER2nXykYKaSQsT2C27emT4m6Pm17QAKwFjIJcPRfp6xRKe9v_J0lOPMQ:1rUkCj:3lKq1zrgQBIsQwCoFoxxt1GUTLbSDwpao5sSFoJp_xw', '2024-02-13 09:14:53.158429');
 INSERT INTO `django_session` VALUES ('py63z2uc4kilh8u2ro39daiuy7xlxqrz', '.eJxVjEEOwiAQRe_C2hBKKQwu3XuGZhgGWzVtU9qFMd5dSLrQ7X_vv7focd-Gfs-89mMUZ6GtOP2OAenBUyXxjtNtljRP2zoGWRV50Cyvc-Tn5XD_AgPmobzRIXQBnI6cFETvHVJQSaF1weimdQRMBlNjG0RS3gBp61tqXUcAyZRozW2vhUst7wuv4vMFibU-4g:1rp2GB:WHW82SoA3dAu39XpgmBQv6WAVXbwk4MHN_bBW-GHxMw', '2024-04-09 08:34:19.949733');
+INSERT INTO `django_session` VALUES ('z16amh7gobg2yhfjurt519idosnfqbeh', '.eJxVjMsOgjAUBf-la9NQ0La4dO83kPsUfFBDy8IY_11IWOj2zJx5mw7m0ndzlqkb2BxN7czud0Sgm4wr4SuMl2QpjWUa0K6K3Wi258RyP23uX6CH3C9vZOEatYrBHWJFEoKgV0_aOAGqAro2UOOCKkrLUaMnFvEe9h5QnC7RNVdeT1lqNOeSHjKZzxeKGkGm:1rploM:GG5gNlHpmI-IW5jYf803bKT-DBY0x6NtXkmi-xdRgcc', '2024-04-11 09:12:38.149929');
+INSERT INTO `django_session` VALUES ('zjha8oddn43n1vndlzf23r3w53a0s4kp', '.eJxVjMsOgjAUBf-la9NQ0La4dO83kPsUfFBDy8IY_11IWOj2zJx5mw7m0ndzlqkb2BxN7czud0Sgm4wr4SuMl2QpjWUa0K6K3Wi258RyP23uX6CH3C9vZOEatYrBHWJFEoKgV0_aOAGqAro2UOOCKkrLUaMnFvEe9h5QnC7RNVdeT1lqNOeSHjKZzxeKGkGm:1rplop:nbsT402W8QfGLnbtXJpzRa8CbRY7XBJPiNNPo32Xcxw', '2024-04-11 09:13:07.504405');
 
 -- ----------------------------
 -- Table structure for mailer_dontsendentry
@@ -441,7 +444,7 @@ CREATE TABLE `mailer_dontsendentry`  (
   `to_address` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `when_added` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of mailer_dontsendentry
@@ -458,7 +461,7 @@ CREATE TABLE `mailer_message`  (
   `priority` smallint UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   CONSTRAINT `mailer_message_priority_4f7b1370_check` CHECK (`priority` >= 0)
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of mailer_message
@@ -481,7 +484,7 @@ CREATE TABLE `mailer_messagelog`  (
   INDEX `mailer_messagelog_when_added_627461e6`(`when_added` ASC) USING BTREE,
   INDEX `mailer_messagelog_priority_5e712cf3`(`priority` ASC) USING BTREE,
   CONSTRAINT `mailer_messagelog_priority_5e712cf3_check` CHECK (`priority` >= 0)
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of mailer_messagelog
@@ -501,7 +504,7 @@ CREATE TABLE `shop_dish`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `shop_dish_dish_shop_id_2bd02c33_fk_shop_shop_id`(`dish_shop_id` ASC) USING BTREE,
   CONSTRAINT `shop_dish_dish_shop_id_2bd02c33_fk_shop_shop_id` FOREIGN KEY (`dish_shop_id`) REFERENCES `shop_shop` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of shop_dish
@@ -524,7 +527,7 @@ CREATE TABLE `shop_employee`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `shop_employee_emp_shop_id_be2d6446_fk_shop_shop_id`(`emp_shop_id` ASC) USING BTREE,
   CONSTRAINT `shop_employee_emp_shop_id_be2d6446_fk_shop_shop_id` FOREIGN KEY (`emp_shop_id`) REFERENCES `shop_shop` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of shop_employee
@@ -550,7 +553,7 @@ CREATE TABLE `shop_order`  (
   INDEX `shop_order_cus_id_id_b6d11589_fk_customer_customer_id`(`cus_id_id` ASC) USING BTREE,
   CONSTRAINT `shop_order_cus_id_id_b6d11589_fk_customer_customer_id` FOREIGN KEY (`cus_id_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `shop_order_ord_shop_id_8fb167d8_fk_shop_shop_id` FOREIGN KEY (`ord_shop_id`) REFERENCES `shop_shop` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of shop_order
@@ -564,7 +567,7 @@ DROP TABLE IF EXISTS `shop_orderlist`;
 CREATE TABLE `shop_orderlist`  (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `ordlist_num` int UNSIGNED NOT NULL,
-  `dish_id` bigint NULL DEFAULT NULL,
+  `dish_id` bigint NOT NULL,
   `ord_number_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `shop_orderlist_dish_id_2017a73a_fk_shop_dish_id`(`dish_id` ASC) USING BTREE,
@@ -572,13 +575,13 @@ CREATE TABLE `shop_orderlist`  (
   CONSTRAINT `shop_orderlist_dish_id_2017a73a_fk_shop_dish_id` FOREIGN KEY (`dish_id`) REFERENCES `shop_dish` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `shop_orderlist_ord_number_id_d642f065_fk_shop_order_ord_number` FOREIGN KEY (`ord_number_id`) REFERENCES `shop_order` (`ord_number`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `shop_orderlist_chk_1` CHECK (`ordlist_num` >= 0)
-) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of shop_orderlist
 -- ----------------------------
-INSERT INTO `shop_orderlist` VALUES (25, 1, 2, '1710916981ITVB6wM');
-INSERT INTO `shop_orderlist` VALUES (26, 1, 1, '1710916981ITVB6wM');
+INSERT INTO `shop_orderlist` VALUES (1, 1, 2, '1710916981ITVB6wM');
+INSERT INTO `shop_orderlist` VALUES (2, 1, 1, '1710916981ITVB6wM');
 
 -- ----------------------------
 -- Table structure for shop_shop
@@ -597,7 +600,7 @@ CREATE TABLE `shop_shop`  (
   UNIQUE INDEX `shop_cus_id`(`shop_cus_id` ASC) USING BTREE,
   UNIQUE INDEX `shop_pass`(`shop_pass` ASC) USING BTREE,
   CONSTRAINT `shop_shop_shop_cus_id_80168578_fk_customer_customer_id` FOREIGN KEY (`shop_cus_id`) REFERENCES `customer_customer` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of shop_shop
