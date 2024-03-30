@@ -1,10 +1,10 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Huawei-Canteen
+ Source Server         : Canteen
  Source Server Type    : MySQL
  Source Server Version : 80027 (8.0.27)
- Source Host           : 139.9.41.156:3305
+ Source Host           : 127.0.0.1:3305
  Source Schema         : canteen
 
  Target Server Type    : MySQL
