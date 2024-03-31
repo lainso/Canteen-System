@@ -19,7 +19,7 @@
 
 ### 部署环境要求
 
-⭐：docker + docker-compose
+⭐：docker + docker-compose v2
 
 ### 部署步骤
 
