@@ -21,9 +21,15 @@
 
 ⭐：docker + docker-compose v2
 
-### 部署步骤
+### 快速部署
 
-⭐：若需要快速体验，可在 Releases 中下载压缩包。详情请在 Releases 中查看。
+1. 在 Releases 中下载部署包，解压。
+
+2. 进入目录，运行 `docker-compose up -d`。
+
+3. 服务启动后访问 `http://127.0.0.1:88/` 即可进入系统。
+
+### 手动部署 | 自定义服务地址
 
 1. 根据 `canteenb/Canteen/config_example.py` 模板在同一级目录下创建 `config.py` 配置文件，对系统进行配置。
 
