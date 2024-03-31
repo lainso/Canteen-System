@@ -17,9 +17,11 @@
 
 # 安装
 
-### 部署环境要求
+### 环境要求
 
-⭐：docker + docker-compose v2
+部署环境：docker + docker-compose v2
+
+打包环境：基于 vite 的 vue3 环境
 
 ### 快速部署
 
