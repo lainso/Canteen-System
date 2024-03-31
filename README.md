@@ -23,6 +23,8 @@
 
 ### 部署步骤
 
+⭐：若需要快速体验，可在 Releases 中下载压缩包。可直接跳到第五步，启动后本机访问 `http://127.0.0.1:88/` 即可。
+
 1. 根据 `canteenb/Canteen/config_example.py` 模板在同一级目录下创建 `config.py` 配置文件，对系统进行配置。
 
 2. 修改 `canteenf-unpack/src/config/main.js` 文件，定义前后端的接口地址。
