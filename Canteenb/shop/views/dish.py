@@ -82,32 +82,54 @@ def update(request):
 
 
 #   商户模糊查询自己的菜品
+@require_http_methods(["GET"])
 def query(request):
-    if request.method == 'GET':
+    try:
         keys = request.GET.get('keys', None)
-        pagenum = request.params['pagenum']
-        pagesize = request.params['pagesize']
-        username = request.params['username']
+        pagenum = request.GET.get('pagenum')
+        pagesize = request.GET.get('pagesize')
+        username = request.GET.get('username')
 
-        if username and pagesize and pagenum:
+        # 输入检查和转换
+        if not all([username, pagesize, pagenum]):
+            return JsonResponse({'code': 1, 'info': '查询失败，有缺失的参数未提交'})
+        try:
+            pagesize = int(pagesize)
+            pagenum = int(pagenum)
+        except ValueError:
+            return JsonResponse({'code': 1, 'info': '查询失败，无效的页面或页面大小'})
+
+        # 数据库查询及异常处理
+        try:
             user = Customer.objects.get(username=username)
             shop = Shop.objects.get(shop_cus=user.id)
-            dish_list = Dish.objects.all().order_by('-id').filter(dish_shop=shop.id)
-            if keys:
-                conditions = [Q(dish_name__contains=con) for con in keys.split(' ') if con]
-                querys = Q()
-                for condi in conditions:
-                    querys &= condi
-                dish_list = dish_list.filter(querys)
-            paginator = Paginator(dish_list, pagesize)
-            page = paginator.get_page(pagenum)
-            res = list(page.object_list.values())
-            return JsonResponse({'code': 0, 'info': '查询成功', 'list': res, 'total': paginator.count})
-        else:
-            return JsonResponse({'code': 1, 'info': '查询失败，有缺失的参数未提交'})
-    else:
-        return JsonResponse({'code': 1, 'info': '查询失败，禁止使用该方法提交'})
-
+        except ObjectDoesNotExist:
+            return JsonResponse({'code': 1, 'info': '用户或商店不存在'})
+        except MultipleObjectsReturned:
+            return JsonResponse({'code': 1, 'info': '查询到多个用户或商店'})
+        
+        # 查询逻辑
+        dish_list = Dish.objects.filter(dish_shop=shop.id).order_by('-id')
+        if keys:
+            conditions = [Q(dish_name__contains=con) for con in keys.split(' ') if con]
+            querys = Q()
+            for condi in conditions:
+                querys &= condi
+            dish_list = dish_list.filter(querys)
+            
+        paginator = Paginator(dish_list, pagesize)
+        
+        # 分页处理
+        if pagenum > paginator.num_pages:
+            pagenum = paginator.num_pages
+        page = paginator.get_page(pagenum)
+        
+        res = list(page.object_list.values())
+        
+        return JsonResponse({'code': 0, 'info': '查询成功', 'list': res, 'total': paginator.count})
+    except Exception as e:
+        # 捕获所有异常并返回信息
+        return JsonResponse({'code': 1, 'info': '查询失败，服务器内部错误：' + str(e)})
 
 options = {
     'add': add,
