@@ -105,8 +105,6 @@ def query(request):
             shop = Shop.objects.get(shop_cus=user.id)
         except ObjectDoesNotExist:
             return JsonResponse({'code': 1, 'info': '用户或商店不存在'})
-        except MultipleObjectsReturned:
-            return JsonResponse({'code': 1, 'info': '查询到多个用户或商店'})
         
         # 查询逻辑
         dish_list = Dish.objects.filter(dish_shop=shop.id).order_by('-id')
