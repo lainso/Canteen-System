@@ -97,7 +97,7 @@ def query(request):
             pagesize = int(pagesize)
             pagenum = int(pagenum)
         except ValueError:
-            return JsonResponse({'code': 1, 'info': '查询失败，无效的页面或页面大小'})
+            return JsonResponse({'code': 1, 'info': '查询失败，无效的分页参数'})
 
         # 数据库查询及异常处理
         try:
@@ -128,7 +128,6 @@ def query(request):
         
         return JsonResponse({'code': 0, 'info': '查询成功', 'list': res, 'total': paginator.count})
     except Exception as e:
-        # 捕获所有异常并返回信息
         return JsonResponse({'code': 1, 'info': '查询失败，服务器内部错误：' + str(e)})
 
 options = {
