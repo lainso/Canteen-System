@@ -17,4 +17,4 @@ COPY ./canteen.sql /docker-entrypoint-initdb.d
 EXPOSE 3306
 
 # 创建数据卷挂载点，用于持久化数据，保证容器停止或删除时数据不会被删除
-VOLUME /var/lib/mysql2
+VOLUME /var/lib/mysql
