@@ -29,7 +29,7 @@ services:
     ports:
       - "8001:8000"
     depends_on:
-      - canteen-mysql
+      - canteen-mysq
       - canteen-redis
 
   canteen-f:
