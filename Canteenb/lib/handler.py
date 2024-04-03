@@ -4,7 +4,6 @@ from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
 import Canteen.settings as can_set
 
 
-
 def request_handler(request, options):
     # 无用户类型session处理
     if 'usertype' not in request.session:
