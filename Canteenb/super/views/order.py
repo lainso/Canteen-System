@@ -3,6 +3,7 @@
 import json
 
 from django.core.paginator import Paginator
+from django.db import IntegrityError
 from django.db.models import Q
 from django.forms import model_to_dict
 from django.http import JsonResponse
@@ -16,9 +17,16 @@ def delete(request):
         data = json.loads(request.body)
         ord_num = data.get('ord_number')
         try:
-            Order.objects.get(ord_number=ord_num).delete()
+            # 首先删除依赖于Order对象的OrderList对象
             OrderList.objects.filter(ord_number=ord_num).delete()
+            # 然后删除Order对象
+            order = Order.objects.get(ord_number=ord_num)
+            order.delete()
             return JsonResponse({'code': 0, 'info': '订单删除成功'})
+        except Order.DoesNotExist:
+            return JsonResponse({'code': 1, 'info': '没有找到对应的订单'})
+        except IntegrityError:
+            return JsonResponse({'code': 1, 'info': '无法删除：请先检查支付记录是否被删除'})
         except Exception as e:
             return JsonResponse({'code': 1, 'info': '订单删除失败：' + str(e)})
     else:

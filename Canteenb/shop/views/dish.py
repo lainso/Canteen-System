@@ -5,6 +5,7 @@ import json
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
 
 from customer.models import Customer
 from lib.handler import request_handler
