@@ -35,26 +35,28 @@
 
 1. 根据 `canteenb/Canteen/config_example.py` 模板在同一级目录下创建 `config.py` 配置文件，对系统进行配置。
 
-2. 修改 `canteenf-unpack/src/config/main.js` 文件，定义前后端的接口地址。
+2. 修改 `canteenf/nginx.conf` 文件，定义前端服务配置。
 
-3. 在 `canteenf-unpack` 下运行安装和构建命令，将前端进行打包。
+3. 修改 `canteenf-unpack/src/config/main.js` 文件，定义前后端的接口地址。
+
+4. 在 `canteenf-unpack` 下运行安装和构建命令，将前端进行打包。
 
 ```bash
 npm install
 npm run build
 ```
 
-4. 将 `canteenf-unpack/dist` 中的所有内容移动到 `canteenf/` 目录下。
+5. 将 `canteenf-unpack/dist` 中的所有内容移动到 `canteenf/` 目录下。
 
-5. 使用命令构建镜像并启动服务：
+6. 使用命令构建镜像并启动服务：
 
 ```bash
 docker-compose up -d
 ```
 
-6. 在宿主机防火墙中开启对应端口，默认至少开启 88 端口。
+7. 在宿主机防火墙中开启对应端口，默认至少开启 88 端口。
 
-7. 访问您定义的前端地址即可进入系统。
+8. 访问您定义的前端地址即可进入系统。
 
 ### 系统自带测试账号
 
