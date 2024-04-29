@@ -26,7 +26,7 @@ def delete(request):
         except Order.DoesNotExist:
             return JsonResponse({'code': 1, 'info': '没有找到对应的订单'})
         except IntegrityError:
-            return JsonResponse({'code': 1, 'info': '无法删除：请先检查支付记录是否被删除'})
+            return JsonResponse({'code': 1, 'info': '无法删除：系统中仍存在相关订单的记录'})
         except Exception as e:
             return JsonResponse({'code': 1, 'info': '订单删除失败：' + str(e)})
     else:

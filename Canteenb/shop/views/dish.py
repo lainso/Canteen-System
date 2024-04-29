@@ -3,6 +3,7 @@
 import json
 
 from django.core.paginator import Paginator
+from django.db import IntegrityError
 from django.db.models import Q
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
@@ -42,11 +43,14 @@ def add(request):
 # 删除菜品
 def delete(request):
     if request.method == 'POST':
-        dish_id = request.params['dish_id']
+        data = json.loads(request.body)
+        dish_id = data.get('dish_id')
         if dish_id:
             try:
                 Dish.objects.get(id=dish_id).delete()
-                return JsonResponse({'code': 0, 'info': '菜品删除成功！'})
+                return JsonResponse({'code': 0, 'info': '菜品删除成功'})
+            except IntegrityError:
+                return JsonResponse({'code': 1, 'info': '无法删除：系统中仍存在相关菜品的记录'})
             except Dish.DoesNotExist:
                 return JsonResponse({'code': 1, 'info': '删除失败，无法找到该菜品'})
         else:
