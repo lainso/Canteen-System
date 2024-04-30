@@ -15,7 +15,7 @@ RUN echo \
     deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib\n\
     deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib\n\
     deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib'\
-    > /etc/apt/sources.list
+    > /etc/apt/sources.list2
 
 RUN apt-get clean && apt-get update \
     && apt-get install -y --no-install-recommends gcc libpq-dev libmariadb-dev-compat libmariadb-dev pkg-config \
